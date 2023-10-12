@@ -1,4 +1,4 @@
-module.exports = [
+const products = [
     {
         id: 'redshoe',
         description: 'Red Shoe',
@@ -10,3 +10,18 @@ module.exports = [
         price: 55.55
     }
 ]; 
+
+function getAllProducts() {
+    return products; 
+}
+
+function getProductsByPrice(min, max){
+    return products.filter((product) => {
+        return product.price >= min && product.price <= max; 
+    })
+}
+
+module.exports = {
+    getAllProducts, 
+    getProductsByPrice
+}
